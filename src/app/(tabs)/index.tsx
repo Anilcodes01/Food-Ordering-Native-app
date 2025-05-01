@@ -4,15 +4,10 @@ import { ThemedText } from "@/src/components/ThemedText";
 import { ThemedView } from "@/src/components/ThemedView";
 import { Colors } from "@/src/constants/Colors";
 import products from "@/assets/data/products";
-
-interface Product {
-  image: string;
-  name: string;
-  price: number;
-}
+import { Product } from "@/src/types";
 
 interface ProductListProps {
-  product?: Product;
+  product: Product;
 }
 
 const ProductList: React.FC<ProductListProps> = ({ product }) => {
@@ -22,7 +17,7 @@ const ProductList: React.FC<ProductListProps> = ({ product }) => {
       <ThemedView style={styles.container}>
         {product && (
           <>
-            <Image source={{ uri: product.image }} style={styles.image} />
+            {product.image && <Image source={{ uri: product.image }} style={styles.image} />}
             <ThemedText style={styles.title}>{product.name}</ThemedText>
             <ThemedText style={styles.price}>${product.price}</ThemedText>
           </>
