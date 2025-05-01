@@ -1,9 +1,8 @@
 import { Product } from "../types";
 import { ThemedText } from "@/src/components/ThemedText";
-import { ThemedView } from "@/src/components/ThemedView";
 import { Colors } from "@/src/constants/Colors";
-import products from "@/assets/data/products";
-import { Image, StyleSheet, Platform } from "react-native";
+import { Image, StyleSheet, Platform, Pressable } from "react-native";
+import { Link } from "expo-router";
 
 interface ProductListProps {
     product: Product;
@@ -12,8 +11,8 @@ interface ProductListProps {
 
 const ProductList: React.FC<ProductListProps> = ({ product }) => {
     return (
-      
-        <ThemedView style={styles.container}>
+        <Link href={`/${product.id}`} asChild>
+        <Pressable style={styles.container}>
           {product && (
             <>
               {product.image && <Image source={{ uri: product.image }} style={styles.image} resizeMode="contain" />}
@@ -21,8 +20,9 @@ const ProductList: React.FC<ProductListProps> = ({ product }) => {
               <ThemedText style={styles.price}>${product.price}</ThemedText>
             </>
           )}
-        </ThemedView>
-
+      
+        </Pressable>
+        </Link>
     );
   };
 
@@ -52,5 +52,8 @@ export  const styles = StyleSheet.create({
         color: Colors.light.tint,
         fontWeight: 'bold',
       },
+     link: {
+        color: 'blue'
+     }
   });
   
