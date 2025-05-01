@@ -11,7 +11,7 @@ interface ProductListProps {
 
 const ProductList: React.FC<ProductListProps> = ({ product }) => {
     return (
-        <Link href={`/${product.id}`} asChild>
+        <Link href={`/(tabs)/menu/${product.id}`} asChild>
         <Pressable style={styles.container}>
           {product && (
             <>
@@ -33,7 +33,7 @@ export  const styles = StyleSheet.create({
     container: {
         backgroundColor: 'white',
         padding: 10,
- 
+        borderRadius: 10,
         flex: 1,
       maxWidth: '50%',
       },

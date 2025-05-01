@@ -27,21 +27,22 @@ export default function TabLayout() {
         }),
       }}
     >
+      <Tabs.Screen name="index" options={{href: null}} />
       <Tabs.Screen
-        name="index"
+        name="menu"
         options={{
-          title: "Home",
+          title: "Menu",
           tabBarIcon: ({ color }) => (
-            <IconSymbol size={28} name="house.fill" color={color} />
+            <IconSymbol size={24} name="house.fill" color={color} /> // Ensure "cutlery" is mapped in MAPPING
           ),
         }}
       />
       <Tabs.Screen
         name="explore"
         options={{
-          title: "Explore",
+          title: "Orders",
           tabBarIcon: ({ color }) => (
-            <IconSymbol size={28} name="paperplane.fill" color={color} />
+            <IconSymbol size={24} name="list.bullet" color={color} />
           ),
         }}
       />
