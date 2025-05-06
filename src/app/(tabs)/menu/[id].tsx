@@ -8,6 +8,7 @@ import Button from "@/src/components/Button";
 import { useCart } from "@/src/providers/ContextProvider";
 import { PizzaSize } from "@/src/types";
 
+
 const sizes: PizzaSize[] = ["S", "M", "L", "XL"];
 
 export default function ProductDetails() {

@@ -13,6 +13,7 @@ type CartListItemProps = {
 };
 
 const CartListItem = ({ cartItem }: CartListItemProps) => {
+    const {updateItemQuantity} = useCart();
  
   return (
     <View style={styles.container}>
@@ -30,7 +31,7 @@ const CartListItem = ({ cartItem }: CartListItemProps) => {
       </View>
       <View style={styles.quantitySelector}>
         <FontAwesome
-        //   onPress={() => updateQuantity(cartItem.id, -1)}
+          onPress={() => updateItemQuantity(cartItem.id, -1)}
           name="minus"
           color="gray"
           style={{ padding: 5 }}
@@ -38,7 +39,7 @@ const CartListItem = ({ cartItem }: CartListItemProps) => {
 
         <Text style={styles.quantity}>{cartItem.quantity}</Text>
         <FontAwesome
-        //   onPress={() => updateQuantity(cartItem.id, 1)}
+          onPress={() => updateItemQuantity(cartItem.id, 1)}
           name="plus"
           color="gray"
           style={{ padding: 5 }}
