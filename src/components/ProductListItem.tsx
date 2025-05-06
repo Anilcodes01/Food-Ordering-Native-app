@@ -8,7 +8,7 @@ interface ProductListProps {
     product: Product;
   }
   
-
+export const defaultPizzaImage = "";
 const ProductList: React.FC<ProductListProps> = ({ product }) => {
     return (
         <Link href={`/(tabs)/menu/${product.id}`} asChild>
